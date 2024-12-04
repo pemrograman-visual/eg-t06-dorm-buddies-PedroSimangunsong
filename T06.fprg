@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="T06"/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-12-04 04:38:29 PM"/>
+        <attribute name="created" value="YXN1cztMQVBUT1AtRzJKVU1IREQ7MjAyNC0xMi0wNDswNDowMzowMyBQTTsyNzg3"/>
+        <attribute name="edited" value="YXN1cztMQVBUT1AtRzJKVU1IREQ7MjAyNC0xMi0wNDswNDoxMTowMiBQTTsxNDtJcmEgV2lhbmRhO0xBUFRPUC1BUzNWQTBENDsyMDIyLTEyLTE4OzA1OjU1OjQ3IFBNO3gwMiAoMSkuZnByZzs3MTQ3"/>
+        <attribute name="edited" value="YXN1cztMQVBUT1AtRzJKVU1IREQ7MjAyNC0xMi0wNDswNDozODoyOSBQTTsyOzI5MTI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nama" type="String" array="True" size="4"/>
+            <declare name="siswa" type="String" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="siswa" expression="&quot;&quot;"/>
+            <assign variable="i" expression="0"/>
+            <call expression="members(nama,i)"/>
+            <call expression="room(nama,siswa,i)"/>
+        </body>
+    </function>
+    <function name="members" type="None" variable="">
+        <parameters>
+            <parameter name="nama" type="String" array="True"/>
+            <parameter name="i" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <do expression="i=0">
+                <for variable="i" start="0" end="3" direction="inc" step="1">
+                    <input variable="nama[i]"/>
+                    <if expression="nama[i]=&quot;---&quot;">
+                        <then>
+                            <assign variable="i" expression="4"/>
+                        </then>
+                        <else/>
+                    </if>
+                </for>
+            </do>
+        </body>
+    </function>
+    <function name="room" type="None" variable="">
+        <parameters>
+            <parameter name="nama" type="String" array="True"/>
+            <parameter name="siswa" type="String" array="False"/>
+            <parameter name="i" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <do expression="i&lt;4">
+                <if expression="nama[i]=&quot;---&quot;">
+                    <then>
+                        <assign variable="siswa" expression="nama[i]"/>
+                        <assign variable="i" expression="4"/>
+                    </then>
+                    <else>
+                        <output expression="nama[i]" newline="True"/>
+                        <assign variable="i" expression="i+1"/>
+                    </else>
+                </if>
+            </do>
+        </body>
+    </function>
+    <function name="value" type="None" variable="">
+        <parameters>
+            <parameter name="siswa" type="String" array="False"/>
+            <parameter name="i" type="Integer" array="False"/>
+            <parameter name="k" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <assign variable="i" expression="0"/>
+            <assign variable="k" expression="0"/>
+            <assign variable="siswa" expression="&quot;&quot;"/>
+            <assign variable="i" expression="k"/>
+        </body>
+    </function>
+</flowgorithm>
